@@ -1,6 +1,6 @@
 name: Run Unit test
 on:
-  push:
+  pull_request:
     branches:
       - main
 
@@ -19,10 +19,10 @@ jobs:
         dotnet-version: '9.x'
         
     - name: Restore dependencies
-      run: dotnet restore DSO25-test-intro/DSO25-test-intro.csproj
+      run: dotnet restore
 
     - name: Run unit test
-      run: dotnet test DSO25-test-intro/CalculatorTest.csproj
+      run: dotnet test
 
         
           
