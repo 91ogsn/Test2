@@ -6,22 +6,23 @@ on:
 
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-        steps:
-        - name: Checkout respository
-          uses: actions/checkout@v4
+    steps:
+    - name: Checkout respository
+      uses: actions/checkout@v4
 
-        - name: Set up .NET
-          uses: actions/setup-dotnet@v4
-          with:
-            dotnet-version: '9.x'
-        - name: Restore dependencies
-          run: dotnet restore DSO25-test-intro/DSO25-test-intro.csproj
+    - name: Set up .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.x'
+        
+    - name: Restore dependencies
+      run: dotnet restore DSO25-test-intro/DSO25-test-intro.csproj
 
-        - name: Run unit test
-          run: dotnet test DSO25-test-intro/CalculatorTest.csproj
+    - name: Run unit test
+      run: dotnet test DSO25-test-intro/CalculatorTest.csproj
 
         
           
